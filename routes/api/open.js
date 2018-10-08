@@ -9,22 +9,22 @@ var data = "bodyData";
 // you are calling (default section is 'default')
 var eg = new EdgeGrid({
   path: "./config/edgerc",
-  section: "default"
+  section: "default",
+  debug: true
 });
 
 router.all("/*", (req, res) => {
-  console.log(eg);
   eg.auth({
-    path: req.url,
+    path: req.baseUrl,
     method: req.method,
-    headers: {},
-    body: req.body
-  }).then(
-    eg.send((error, response, body) => {
-      console.log(body);
-    })
-  );
-  res.json({ msg: "routing works" });
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: data
+  }).send(function(error, response, body) {
+    //console.log(body);
+    res.json(body);
+  });
 });
 
 module.exports = router;

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kai98/edgegrid-js#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "edgegrid": "^3.0.4",
     "express": "^4.16.3"
   }
