@@ -20,7 +20,7 @@ router.all("/*", (req, res) => {
     headers: {
       "Content-Type": "application/json"
     },
-    body: data
+    body: req.body
   }).send(function(error, response, body) {
     //console.log(body);
     res.json(body);
