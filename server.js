@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const akamaiApis = require("./routes/akamai-apis");
+const akamaiApis = require("./routes/api");
 const EdgeGrid = require("edgegrid");
 
 // Supply the path to your .edgerc file and name
